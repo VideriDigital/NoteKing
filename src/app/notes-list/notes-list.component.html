@@ -1,0 +1,21 @@
+<div *ngIf="notes && notes.length > 0" class="notes-king__note_container">
+    <div 
+    *ngFor="let note of notes" 
+    (click)="selectNote(note)"
+    class="notes-king__note">
+        <div class="title">
+            <div class="title-message">
+                {{ note.title }}
+            </div>
+            <div class="actions">
+                <a class="tag" (click)="noteEdit(note)">Edit</a> 
+                <a class="tag" (click)="noteDelete(note)" >Delete</a>
+            </div>
+            
+        </div>
+        <p>{{ note.content }}</p>
+    </div>
+</div>
+<div *ngIf="!notes || notes.length === 0" class="notes-king__note_container">
+    <h5>You have no Notes...</h5>
+</div>

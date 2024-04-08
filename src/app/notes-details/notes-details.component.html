@@ -1,0 +1,8 @@
+<div class="note-detail-container" *ngIf="note$ | async as selectedNote">
+    <div class="note-detail__header">
+        <h2 class="notes-king__heading">{{ selectedNote.title }}</h2><img width="50px" src="../assets/note-king-logo.png" alt="">
+    </div>
+    <div class="note-detail__content">
+        <p>{{ selectedNote.content }}</p>
+    </div>
+</div>

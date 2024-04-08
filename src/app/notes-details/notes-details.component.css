@@ -1,0 +1,15 @@
+.note-detail__header {
+    border-bottom: 2px solid gold;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.notes-king__heading {
+    display: inline;
+}
+
+.note-detail__header img {
+    width: 30px;
+    margin-top: -40px;
+}
+

@@ -1,0 +1,72 @@
+.notes-king__note {
+    background: #353535;
+    padding: 15px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all ease-in-out 200ms;
+  }
+  
+  .notes-king__note .title {
+    font-size: 18px;
+    border-bottom: 1px solid gold;
+    padding-bottom: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  
+  .notes-king__note {
+    margin-bottom: 15px;
+    border: 1px solid #424242;
+  }
+  
+  .notes-king__note p {
+    margin-bottom: 0px;
+  }
+
+  .notes-king__note:hover {
+    background: #d3ae11;
+  }
+  
+  .notes-king__note:hover .title {
+    font-size: 18px;
+    border-bottom: 1px solid #242424;
+    padding-bottom: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    color:#242424;
+  }
+  
+  .notes-king__note:hover p {
+    color: #242424;
+  }
+
+  .notes-king__note .actions {
+    display: inline;
+    visibility: hidden;
+  }
+
+  .notes-king__note:hover .actions {
+    display: inline;
+    visibility: visible;
+  }
+
+  .title .actions a {
+    display: inline;
+    font-size: 10px;
+    background: gold;
+    margin-inline-start: 10px;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 1px solid #d3ae11;
+    text-decoration: none;
+  }
+
+  .actions a:hover {
+    background: #24242400 !important;
+    color: white !important;
+    border: 2px solid #fff !important;
+  }
+  
