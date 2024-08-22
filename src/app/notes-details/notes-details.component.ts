@@ -10,11 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class NotesDetailsComponent {
 
-  notes: Note[];
+  notes!: Note[];
   note$: Observable<Note | undefined>;
 
   constructor(private noteService: NotesService){
-    this.notes = noteService.getNotes();
+    this.noteService.getNotes().subscribe((notes: Note[]) => {
+      this.notes = notes;
+    })
     this.note$ = noteService.noteSelected;
   }
 

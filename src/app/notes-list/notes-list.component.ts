@@ -10,15 +10,12 @@ import { Router } from '@angular/router';
 })
 export class NotesListComponent {
 
-  notes: Note[] | undefined;
+  notes: Note[] =[];
 
   constructor(private noteService: NotesService, private routerService: Router){
-    this.notes = noteService.getNotes();
-    this.noteService.notesUpdated.subscribe(notes => {
-      if(notes){
-        this.notes = notes;
-      }
-      
+    
+    this.noteService.getNotes().subscribe((notes: Note[]) => {
+      this.notes = notes;
     })
   }
 

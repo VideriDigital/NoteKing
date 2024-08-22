@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 body {
@@ -10,3 +10,13 @@ body {
     --bs-body-font-family: "Outfit", sans-serif;
   }
   
+
+button {
+  color: #d3ae11;
+  background: #212121;
+  border: 1px solid #d3ae11;
+  font-size: 15px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}

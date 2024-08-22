@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class EditNoteComponent {
 
-notes: Note[];
+notes!: Note[];
 note$: Observable<Note | undefined>; 
 noteTitle: string | undefined;
 noteContent: string | undefined;
@@ -19,7 +19,9 @@ noteID: number | undefined;
 
  constructor(private noteService: NotesService,
   private router: Router){
-  this.notes = noteService.getNotes();
+    this.noteService.getNotes().subscribe((notes: Note[]) => {
+      this.notes = notes;
+    })
   this.note$ = noteService.noteSelected;
   this.note$.subscribe(noteSelected => {
     if(noteSelected){
