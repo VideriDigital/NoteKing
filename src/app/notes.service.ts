@@ -16,9 +16,9 @@ export class NotesService {
   private collectionName = 'notes'
 
   private notes: Note[] = [
-    new Note(1, 'First Note', 'This is the content of my first note, how exciting!'),
-    new Note(2, 'Second Note', 'This is the content of my second note, how exciting!'),
-    new Note(3, 'Last Note', 'This is the content of my third note, how exciting!')
+    new Note("1", 'First Note', 'This is the content of my first note, how exciting!'),
+    new Note("2", 'Second Note', 'This is the content of my second note, how exciting!'),
+    new Note("3", 'Last Note', 'This is the content of my third note, how exciting!')
   ];
 
   constructor(private firestore: AngularFirestore) {}
@@ -38,12 +38,16 @@ export class NotesService {
     )
    }
 
-   updateNote(note: Note){
-      return this.firestore.collection(this.collectionName).doc(note.id.toString()).update(note)
-   }
+   updateNote(note: Note): Promise<void> {
+    return this.firestore.collection(this.collectionName).doc(note.id).update({
+      id: note.id,
+      title: note.title,
+      content: note.content
+    });
+  }
 
    deleteNote(note: Note): Promise<void> {
-      return this.firestore.collection(this.collectionName).doc(note.id.toString()).delete()
+      return this.firestore.collection(this.collectionName).doc(note.id).delete()
     }
 
 

@@ -15,7 +15,7 @@ notes!: Note[];
 note$: Observable<Note | undefined>; 
 noteTitle: string | undefined;
 noteContent: string | undefined;
-noteID: number | undefined;
+noteID: string | undefined;
 
  constructor(private noteService: NotesService,
   private router: Router){
